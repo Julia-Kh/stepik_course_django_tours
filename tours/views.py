@@ -1,5 +1,6 @@
 import random
 
+from django.http import Http404
 from django.http import HttpResponseNotFound
 from django.http import HttpResponseServerError
 from django.shortcuts import render
@@ -40,7 +41,8 @@ def departure_view(request, departure):
             prices_of_tours.append(inf['price'])
             nights.append(inf['nights'])
             tours[count_of_tours] = inf
-
+    if count_of_tours == 0:
+        raise Http404
     context['tours'] = tours
     context['count_of_tours'] = count_of_tours
     context['max_price'] = max(prices_of_tours)
@@ -65,6 +67,8 @@ def tour_view(request, tour_id):
     for key, value in data.tours.items():
         if key == tour_id:
             context = value
+    if context == {}:
+        raise Http404
     stars = '★' * int(context['stars'])
     context['stars'] = stars
     return render(request, 'tours/tour.html', context=context)

@@ -7,15 +7,14 @@
             от {{ min_count_if_nights }} ночей до {{ max_count_if_nights }} ночей</p>
         <!-- CARDS -->
         <div class="row mt-5">
-        {% for tour in tours %}
+        {% for tour, inf in tours.items %}
             <div class="col-4">
                 <div class="card mb-4">
-                    <img src="https://place-hold.it/300x200" class="card-img-top img-fluid" alt="">
+                    <img src={{ inf.picture }} alt="">
                     <div class="card-body">
-                        <h2 class="h5 card-title">Hotel title</h2>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
-                        <a href="#" class="btn btn-sm btn-primary">Подробнее</a>
+                        <h2 class="h5 card-title">{{ inf.title }} {{ inf.stars }}★</h2>
+                        <p class="card-text">{{ inf.description }}</p>
+                        <p>{{ inf.date }}, {{ inf.nights }} ночей, {{ inf.price }} P</p>
                     </div>
                 </div>
             </div>
