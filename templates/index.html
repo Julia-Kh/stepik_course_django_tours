@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% block container %}
+
+  <main class="container mt-3">
+    <!-- HERO -->
+    <section class="jumbotron text-center mt-4" style="background: url('https://place-hold.it/1600x300'); background-position: center center">
+        <h1 class="display-4"><b>Всякие туры</b></h1>
+      <p class="lead">{{ subtitle }}</p>
+      <p class="mt-5 w-50 mx-auto">{{ description }}</p>
+    </section>
+    <!-- CARDS -->
+    <div class="row mt-5">
+      <div class="col-4">
+        <div class="card mb-4">
+          <div class="embed-responsive embed-responsive-16by9">
+             <img class="card-img-top embed-responsive-item" src={{ tours.1.picture }} alt="" />
+          </div>          
+          <div class="card-body">
+            <h2 class="h5 card-title">{{ tours.1.title }}</h2>
+            <p class="card-text">{{ tours.1.description }}</p>
+            <p>{{ tours.1.date }}, {{ tours.1.nights }} ночей, {{ tours.1.price }} {{ tours.1.stars }}★</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="card mb-4">
+          <div class="embed-responsive embed-responsive-16by9">
+             <img class="card-img-top embed-responsive-item" src={{ tours.2.picture }} alt="" />
+          </div>          
+          <div class="card-body">
+            <h2 class="h5 card-title">{{ tours.2.title }}</h2>
+            <p class="card-text">{{ tours.2.description }}</p>
+            <p>{{ tours.2.date }}, {{ tours.2.nights }} ночей, {{ tours.2.price }} {{ tours.2.stars }}★</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="card mb-4">
+          <div class="embed-responsive embed-responsive-16by9">
+             <img class="card-img-top embed-responsive-item" src={{ tours.3.picture }} alt="" />
+          </div>          
+          <div class="card-body">
+            <h2 class="h5 card-title">{{ tours.3.title }}</h2>
+            <p class="card-text">{{ tours.3.description }}</p>
+            <p>{{ tours.3.date }}, {{ tours.3.nights }} ночей, {{ tours.3.price }} {{ tours.3.stars }}★</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="card mb-4">
+          <div class="embed-responsive embed-responsive-16by9">
+             <img class="card-img-top embed-responsive-item" src={{ tours.4.picture }} alt="" />
+          </div>          
+          <div class="card-body">
+            <h2 class="h5 card-title">{{ tours.4.title }}</h2>
+            <p class="card-text">{{ tours.4.description }}</p>
+            <p>{{ tours.4.date }}, {{ tours.4.nights }} ночей, {{ tours.4.price }} {{ tours.4.stars }}★</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="card mb-4">
+          <div class="embed-responsive embed-responsive-16by9">
+             <img class="card-img-top embed-responsive-item" src={{ tours.5.picture }} alt="" />
+          </div>          
+          <div class="card-body">
+            <h2 class="h5 card-title">{{ tours.5.title }}</h2>
+            <p class="card-text">{{ tours.5.description }}</p>
+            <p>{{ tours.5.date }}, {{ tours.5.nights }} ночей, {{ tours.5.price }} {{ tours.5.stars }}★</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="card mb-4">
+          <div class="embed-responsive embed-responsive-16by9">
+             <img class="card-img-top embed-responsive-item" src={{ tours.6.picture }} alt="" />
+          </div>          
+          <div class="card-body">
+            <h2 class="h5 card-title">{{ tours.6.title }}</h2>
+            <p class="card-text">{{ tours.6.description }}</p>
+            <p>{{ tours.6.date }}, {{ tours.6.nights }} ночей, {{ tours.6.price }} {{ tours.6.stars }}★</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+{% endblock %}
