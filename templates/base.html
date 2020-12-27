@@ -6,6 +6,11 @@
     <title>Stepik Travel</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .active {
+            font-size: 120%;
+        }
+    </style>
 </head>
 
 <body>
@@ -20,7 +25,8 @@
             <ul class="navbar-nav">
                 {% for key, value in departures.items %}
                     <li class="nav-item active">
-                    <a class="nav-link" href="/departure/{{ key }}/">{{ value }}</a>
+                    {% url 'departure' key as current_url %}
+                    <a class="nav-link{% if request.path == current_url %} active{% endif %}" href="/departure/{{ key }}/">{{ value }}</a>
                     </li>
                 {% endfor %}
                 <li class="nav-item active">

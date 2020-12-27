@@ -51,7 +51,6 @@ def departure_view(request, departure):
     context['min_count_if_nights'] = min(nights)
     context['departures'] = data.departures
     context['current_departure'] = data.departures[departure]
-    print(context)
     return render(request, 'tours/departure.html', context=context)
 
 
