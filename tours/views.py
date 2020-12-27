@@ -49,16 +49,9 @@ def departure_view(request, departure):
     context['min_price'] = min(prices_of_tours)
     context['max_count_if_nights'] = max(nights)
     context['min_count_if_nights'] = min(nights)
-    if departure == 'spb':
-        context['departure'] = 'Летим из Петербурга'
-    elif departure == 'msk':
-        context['departure'] = 'Летим из Москвы'
-    elif departure == 'kazan':
-        context['departure'] = 'Летим из Казани'
-    elif departure == 'nsk':
-        context['departure'] = 'Летим из Новосибирска'
-    elif departure == 'ekb':
-        context['departure'] = 'Летим из Екатеринбурга'
+    context['departures'] = data.departures
+    context['current_departure'] = data.departures[departure]
+    print(context)
     return render(request, 'tours/departure.html', context=context)
 
 
@@ -71,6 +64,7 @@ def tour_view(request, tour_id):
         raise Http404
     stars = '★' * int(context['stars'])
     context['stars'] = stars
+    context['departures'] = data.departures
     return render(request, 'tours/tour.html', context=context)
 
 
