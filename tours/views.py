@@ -61,8 +61,11 @@ def tour_view(request, tour_id):
             context = value
     if context == {}:
         raise Http404
-    stars = '★' * int(context['stars'])
-    context['stars'] = stars
+    try:
+        stars = '★' * int(context['stars'])
+        context['stars'] = stars
+    except (ValueError):
+        pass
     context['departures'] = data.departures
     return render(request, 'tours/tour.html', context=context)
 
