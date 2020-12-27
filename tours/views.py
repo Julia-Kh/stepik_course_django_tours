@@ -21,7 +21,7 @@ def main_view(request):
     random_tours = {}
     for i in range(6):
         random_tour = random.choice(all_tours)
-        random_tours[str(i+1)] = (context['tours'][random_tour])
+        random_tours[random_tour] = (context['tours'][random_tour])
         all_tours.remove(random_tour)
     context['tours'] = random_tours
 
@@ -40,7 +40,7 @@ def departure_view(request, departure):
             count_of_tours += 1
             prices_of_tours.append(inf['price'])
             nights.append(inf['nights'])
-            tours[count_of_tours] = inf
+            tours[tour] = inf
     if count_of_tours == 0:
         raise Http404
     context['tours'] = tours
