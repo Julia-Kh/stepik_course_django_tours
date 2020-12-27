@@ -24,7 +24,6 @@ def main_view(request):
         random_tours[random_tour] = (context['tours'][random_tour])
         all_tours.remove(random_tour)
     context['tours'] = random_tours
-
     return render(request, 'index.html', context=context)
 
 
@@ -61,11 +60,6 @@ def tour_view(request, tour_id):
             context = value
     if context == {}:
         raise Http404
-    try:
-        stars = '★' * int(context['stars'])
-        context['stars'] = stars
-    except (ValueError):
-        pass
     context['departures'] = data.departures
     return render(request, 'tours/tour.html', context=context)
 
