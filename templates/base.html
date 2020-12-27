@@ -25,8 +25,9 @@
             <ul class="navbar-nav">
                 {% for key, value in departures.items %}
                     <li class="nav-item active">
-                    {% url 'departure' key as current_url %}
-                    <a class="nav-link{% if request.path == current_url %} active{% endif %}" href="/departure/{{ key }}/">{{ value }}</a>
+                        {% url 'departure' key as current_url %}
+                        <a class="nav-link{% if request.path == current_url %} active{% endif %}"
+                           href="/departure/{{ key }}/">{{ value }}</a>
                     </li>
                 {% endfor %}
                 <li class="nav-item active">
