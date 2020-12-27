@@ -7,18 +7,18 @@
             от {{ min_count_if_nights }} ночей до {{ max_count_if_nights }} ночей</p>
         <!-- CARDS -->
         <div class="row mt-5">
-        {% for tour, inf in tours.items %}
-            <div class="col-4">
-                <div class="card mb-4">
-                    <img src={{ inf.picture }} alt="">
-                    <div class="card-body">
-                        <h2 class="h5 card-title">{{ inf.title }} {{ inf.stars }}★</h2>
-                        <p class="card-text">{{ inf.description }}</p>
-                        <p>{{ inf.date }}, {{ inf.nights }} ночей, {{ inf.price }} P</p>
+            {% for tour, inf in tours.items %}
+                <div class="col-4">
+                    <div class="card mb-4">
+                        <img src={{ inf.picture }} alt="">
+                        <div class="card-body">
+                            <h2 class="h5 card-title">{{ inf.title }} {{ inf.stars }}★</h2>
+                            <p class="card-text">{{ inf.description }}</p>
+                            <p>{{ inf.date }}, {{ inf.nights }} ночей, {{ inf.price }} P</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        {% endfor %}
+            {% endfor %}
         </div>
     </main>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
