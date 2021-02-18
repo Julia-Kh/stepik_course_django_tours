@@ -16,12 +16,9 @@ def main_view(request):
                }
     # выбираем рандомные шесть туров
     all_tours = data.tours
-    all_tours_indices = []
-    for tour_index in all_tours:
-        all_tours_indices.append(tour_index)
     random_tours = {}
     count_of_tours_on_main_page = 6
-    random_indices = random.sample(all_tours_indices, count_of_tours_on_main_page)
+    random_indices = random.sample(list(all_tours), count_of_tours_on_main_page)
     for random_index in random_indices:
         random_tours[random_index] = all_tours[random_index]
     context['tours'] = random_tours
