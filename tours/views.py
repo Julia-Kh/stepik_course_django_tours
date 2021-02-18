@@ -13,6 +13,7 @@ def main_view(request):
                'subtitle': data.subtitle,
                'description': data.description,
                'departures': data.departures,
+               'tours': data.tours
                }
     # выбираем рандомные шесть туров
     all_tours = []
