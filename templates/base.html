@@ -23,11 +23,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-                {% for key, value in departures.items %}
+                {% for departure_abbreviation, departure_text in departures.items %}
                     <li class="nav-item active">
-                        {% url 'departure' key as current_url %}
+                        {% url 'departure' departure_abbreviation as current_url %}
                         <a class="nav-link{% if request.path == current_url %} active{% endif %}"
-                           href="/departure/{{ key }}/">{{ value }}</a>
+                           href="{{ current_url }}">{{ departure_text }}</a>
                     </li>
                 {% endfor %}
                 <li class="nav-item active">
