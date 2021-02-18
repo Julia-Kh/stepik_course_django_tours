@@ -35,12 +35,12 @@ def departure_view(request, departure):
     count_of_tours = 0
     prices_of_tours = []
     nights = []
-    for tour, inf in all_tours.items():
-        if inf['departure'] == departure:
+    for tour_id, tour_data in all_tours.items():
+        if tour_data['departure'] == departure:
             count_of_tours += 1
-            prices_of_tours.append(inf['price'])
-            nights.append(inf['nights'])
-            tours[tour] = inf
+            prices_of_tours.append(tour_data['price'])
+            nights.append(tour_data['nights'])
+            tours[tour_id] = tour_data
     if count_of_tours == 0:
         raise Http404
     context['tours'] = tours
