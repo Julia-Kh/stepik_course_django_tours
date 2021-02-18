@@ -55,11 +55,8 @@ def departure_view(request, departure):
 
 
 def tour_view(request, tour_id):
-    context = {}
-    for key, value in data.tours.items():
-        if key == tour_id:
-            context = value
-    if context == {}:
+    context = data.tours.get(tour_id)
+    if context is None:
         raise Http404
     context['departures'] = data.departures
     return render(request, 'tours/tour.html', context=context)
