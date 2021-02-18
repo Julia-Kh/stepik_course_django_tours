@@ -13,13 +13,14 @@ def main_view(request):
                'subtitle': data.subtitle,
                'description': data.description,
                'departures': data.departures,
-               'tours': data.tours}
+               }
     # выбираем рандомные шесть туров
     all_tours = []
     for key in context['tours']:
         all_tours.append(key)
     random_tours = {}
-    for i in range(6):
+    count_of_tours_on_main_page = 6
+    for i in range(count_of_tours_on_main_page):
         random_tour = random.choice(all_tours)
         random_tours[random_tour] = (context['tours'][random_tour])
         all_tours.remove(random_tour)
