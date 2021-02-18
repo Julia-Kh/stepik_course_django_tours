@@ -21,10 +21,9 @@ def main_view(request):
         all_tours_indices.append(tour_index)
     random_tours = {}
     count_of_tours_on_main_page = 6
-    for _ in range(count_of_tours_on_main_page):
-        random_tour_index = random.choice(all_tours_indices)
-        random_tours[random_tour_index] = (all_tours[random_tour_index])
-        all_tours_indices.remove(random_tour_index)
+    random_indices = random.sample(all_tours_indices, count_of_tours_on_main_page)
+    for random_index in random_indices:
+        random_tours[random_index] = all_tours[random_index]
     context['tours'] = random_tours
     return render(request, 'index.html', context=context)
 
